@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Slabo+27px&display=swap');
+
+.bgColor {
+    background-color: #f8e4d3;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+} 
+
+.colorOnClick:active{
+    background-color: #c7ad8a !important;
+}

@@ -1,0 +1,17 @@
+.cartItem{
+    margin-left: 5px;
+}
+
+.itemsCounter {
+    margin-left: 5px;
+    margin-right: 5px;
+    position: sticky;
+    opacity: 50%;
+}
+
+.cartItem:hover {
+    margin-top: -2px;
+    zoom: 105%;
+    opacity: 100%;
+    color: rgb(131, 92, 60) !important;
+}
