@@ -8,12 +8,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import {Link} from 'react-router-dom';
 
 function NavBar () {
     return (
         <Navbar className="bgColor" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">MundoCerámica</Navbar.Brand>
+                <Link to='/'><Navbar.Brand>MundoCerámica</Navbar.Brand></Link>
             </Container>
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

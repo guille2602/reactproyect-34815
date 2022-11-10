@@ -2,17 +2,21 @@ import React from "react";
 // import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './item.css'
+import { Link } from 'react-router-dom';
 
-function Item (props) {
-    return (
-<div className="card personalizedCard">
-  <img src={props.imgurl} alt='Product photograph' className="card-img-top"/>
-  <div className="card-body">
-    <h5 className="card-title">{props.name}</h5>
-    <h6 className="card-text">{props.price}</h6>
-  </div>
-</div>
-    );
+function Item ({id, name, price, imgurl}) {
+  const itemUrl = `/item/${id}`;
+  return (
+    <div className="card personalizedCard">
+      <Link to={itemUrl}>
+        <img src={imgurl} alt='Product photograph' className="card-img-top"/>
+      </Link>
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <h6 className="card-text">{price}</h6>
+      </div>
+    </div>
+  );
 }
 
 export default Item;

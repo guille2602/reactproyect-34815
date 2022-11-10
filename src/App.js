@@ -7,13 +7,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route path='/' element={<ItemListContainer greetings="¡Bienvenidos a MundoCerámica!"/>}/>
-          <Route path='/Item/' element={<ItemDetailContainer/>}/>
-        </Routes>
-      </BrowserRouter>    
+    <BrowserRouter>
+    <NavBar/>
+    <Routes>
+      <Route path='/' element={<ItemListContainer greetings="¡Bienvenidos a MundoCerámica!"/>}/>
+      <Route path= '/item/:id' element={<ItemDetailContainer/>}/>
+    </Routes>
+  </BrowserRouter> 
   );
 }
 

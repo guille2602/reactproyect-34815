@@ -10,10 +10,11 @@ function getItems() {
     });
   }
 
-  export function getItem() {
-    return new Promise((resolve) => {
+  export function getItem(itemid) {
+    const requested = products.find((prod)=> prod.id === parseInt(itemid));
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(products[1]);
+        resolve(requested); reject("Not found")
       }, 2000);
     });
   }
