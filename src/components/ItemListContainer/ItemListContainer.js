@@ -3,7 +3,8 @@ import React from "react";
 import {useEffect, useState} from "react";
 import './ItemListContainer.css'
 import Item from "./Item.js";
-import getItems from "../../services/mockService.js"
+import getItems from "../../services/mockService.js";
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 //Renderizar contenedor de cards de productos
@@ -19,16 +20,20 @@ function ItemListContainer (props) {
     useEffect(()=>{loadProducts()},[]);
 
     return (
-        <div className="box">
+        <div className="ms-auto box">
             <h1 className="mainTitle">{props.greetings}</h1>
-            <div>
-            {products.map((prod) => {
+            <div className='prodsBox'>
+  
+            {products.map(({id, producto, precio, imgurl}) => {
+                const url = '/pictures/' + id + 'A.webp';
                 return (
                 <Item 
-                    key ={prod.id}
-                    name={prod.producto}
-                    price={prod.precio}
-                    imgurl='https://http2.mlstatic.com/D_NQ_NP_600271-MLA50925971479_072022-O.webp'>
+                    className='ms-auto col-sm-12 col-md-4 col-lg-4 col-xl-4'
+                    key ={id}
+                    id={id}
+                    name={producto}
+                    price={precio}
+                    imgurl={url}>
                 </Item>)
             })   
             }

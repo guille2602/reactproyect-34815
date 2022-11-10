@@ -6,8 +6,17 @@ function getItems() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(products);
-      }, 1000);
+      }, 2000);
     });
   }
 
+  export function getItem() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(products[1]);
+      }, 2000);
+    });
+  }
+  
   export default getItems;
+  
