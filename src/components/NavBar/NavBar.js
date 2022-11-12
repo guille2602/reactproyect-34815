@@ -20,11 +20,12 @@ function NavBar () {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
                 <Nav>
-                    <Nav.Link href="#home">Deco</Nav.Link>
-                    <Nav.Link href="#">Vajilla</Nav.Link>
-                    <Nav.Link href="#">Macetas</Nav.Link>
-                    <Nav.Link href="#">Velas y aceites</Nav.Link>
-                    <Nav.Link href="#">Baño</Nav.Link>
+                    <Link className='nav-link'to='/category/deco'>Deco</Link>
+                    <Link className='nav-link' to='/category/iluminacion'>Iluminación</Link>
+                    <Link className='nav-link' to='/category/hogar'>Hogar</Link>
+                    <Link className='nav-link' to='/category/cocina'>Cocina</Link>
+                    <Link className='nav-link' to='/category/macetas'>Macetas</Link>
+                    <Link className='nav-link' to='/category/velas'>Velas</Link>
                     <Nav.Link><CartWidget counter="0"></CartWidget></Nav.Link>
                     <NavDropdown align="end" title="Login" id="basic-nav-dropdown">
                         <NavDropdown.Item className="colorOnClick" href="#">Iniciar sesión</NavDropdown.Item>

@@ -13,8 +13,9 @@ function getItems() {
   export function getItem(itemid) {
     const requested = products.find((prod)=> prod.id === parseInt(itemid));
     return new Promise((resolve, reject) => {
+      requested === undefined && reject("Not found");
       setTimeout(() => {
-        resolve(requested); reject("Not found")
+        resolve(requested);
       }, 2000);
     });
   }
