@@ -7,7 +7,7 @@ import ItemCount from '../ItemCount/ItemCount.js';
 function ItemDetail ({id, producto, precio, stock, categoria, info}) {
   const imgurl = `/pictures/${id}A.webp`
   return (
-    <div className="container-lg itemInfoContainer">
+    <div className="container-md itemInfoContainer">
       <div className="row ms-auto">
         <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
           <img className="itemImg" src={imgurl} alt='Product photograph'/>
