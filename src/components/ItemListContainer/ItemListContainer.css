@@ -1,6 +1,10 @@
 .mainTitle {
     justify-content: center;
+    font-weight: 400;
+    font-size: 24pt;
     text-align: center;
+
+    opacity: 0.4;
 }
 
 .box{

@@ -1,0 +1,21 @@
+.itemImg {
+    width: 100%;
+}
+
+.itemInfoContainer{
+    height: 100vh;
+    width: 80vw;;
+    margin-top: 10vh;
+}
+
+h5{
+    color: rgb(187, 187, 187);
+}
+
+hr{
+    color: rgb(187, 187, 187);
+}
+
+.prodName{
+    opacity: 0.8;;
+}

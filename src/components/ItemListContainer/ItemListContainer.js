@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 
 
 //Renderizar contenedor de cards de productos
-function ItemListContainer (props) {
+function ItemListContainer ({greetings}) {
 
     const [products, setProducts] = useState([]);
     
@@ -18,7 +18,7 @@ function ItemListContainer (props) {
     async function loadProducts() {
         let prods = await getItems();
         if (categoryid !== undefined) {
-            prods = prods.filter((prod)=> prod.categoria === categoryid)
+            prods = prods.filter((prod)=> prod.categoria === categoryid);
         };
         setProducts(prods)
 }
@@ -27,7 +27,7 @@ function ItemListContainer (props) {
 
     return (
         <div className="ms-auto box">
-            <h1 className="mainTitle">{props.greetings}</h1>
+            <h1 className="mainTitle">{greetings}</h1>
             <div className='prodsBox'>
   
             {products.map(({id, producto, precio, imgurl}) => {

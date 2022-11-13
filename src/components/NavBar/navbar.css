@@ -8,3 +8,8 @@
 .colorOnClick:active{
     background-color: #c7ad8a !important;
 }
+
+.brand{
+    text-decoration: none !important;
+    text-align: center !important;
+}

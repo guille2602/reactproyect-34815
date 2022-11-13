@@ -22,7 +22,9 @@ function ItemDetailContainer (props) {
             key ={product.id}
             id = {product.id}
             producto={product.producto}
-            precio={product.precio}>
+            categoria={product.categoria}
+            precio={product.precio}
+            stock={product.stock}>
         </ItemDetail>)
 };
 

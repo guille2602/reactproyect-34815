@@ -1,15 +1,24 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './itemDetail.css'
+import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import ItemCount from '../ItemCount/ItemCount.js';
 
-function ItemDetail ({id, producto, precio}) {
+function ItemDetail ({id, producto, precio, stock, categoria}) {
   const imgurl = `/pictures/${id}A.webp`
   return (
-    <div className="card personalizedCard">
-      <img src={imgurl} alt='Product photograph' className="card-img-top"/>
-      <div className="card-body">
-        <h5 className="card-title">{producto}</h5>
-        <h6 className="card-text">{precio}</h6>
+    <div className="container-lg itemInfoContainer">
+      <div className="row ms-auto">
+        <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <img className="itemImg" src={imgurl} alt='Product photograph'/>
+        </div>
+        <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 px-5 py-4">
+          <h2 className="prodName text-right">{producto}</h2>
+          <hr className="mt-0 mb-2"/>
+          <h7 className="text-right">Categoría {categoria}</h7>
+          <h5 className="mt-2 text-right">{precio}</h5>
+          <ItemCount stock={stock} init={1} title="Agregar al carrito"/>
+        </div>
       </div>
     </div>
    );
