@@ -15,7 +15,7 @@ function ItemDetail ({id, producto, precio, stock, categoria}) {
         <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 px-5 py-4">
           <h2 className="prodName text-right">{producto}</h2>
           <hr className="mt-0 mb-2"/>
-          <h7 className="text-right">Categoría {categoria}</h7>
+          <h6 className="text-right">Categoría {categoria}</h6>
           <h5 className="mt-2 text-right">{precio}</h5>
           <ItemCount stock={stock} init={1} title="Agregar al carrito"/>
         </div>

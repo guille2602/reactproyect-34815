@@ -4,6 +4,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer.
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.js';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NotFound from './components/NotFound/NotFound.js';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path='/' element={<ItemListContainer greetings="¡Bienvenidos a MundoCerámica!"/>}/>
       <Route path= '/category/:categoryid' element={<ItemListContainer/>}/>
       <Route path= '/item/:id' element={<ItemDetailContainer/>}/>
+      <Route path= '*' element={<NotFound/>}/>
     </Routes>
   </BrowserRouter> 
   );
