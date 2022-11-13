@@ -24,7 +24,8 @@ function ItemDetailContainer (props) {
             producto={product.producto}
             categoria={product.categoria}
             precio={product.precio}
-            stock={product.stock}>
+            stock={product.stock}
+            info={product.info}>
         </ItemDetail>)
 };
 

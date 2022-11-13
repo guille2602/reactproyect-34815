@@ -4,7 +4,7 @@ import './itemDetail.css'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from '../ItemCount/ItemCount.js';
 
-function ItemDetail ({id, producto, precio, stock, categoria}) {
+function ItemDetail ({id, producto, precio, stock, categoria, info}) {
   const imgurl = `/pictures/${id}A.webp`
   return (
     <div className="container-lg itemInfoContainer">
@@ -17,6 +17,7 @@ function ItemDetail ({id, producto, precio, stock, categoria}) {
           <hr className="mt-0 mb-2"/>
           <h6 className="text-right">Categoría {categoria}</h6>
           <h5 className="mt-2 text-right">{precio}</h5>
+          <p className="mt-2 text-right">{info}</p>
           <ItemCount stock={stock} init={1} title="Agregar al carrito"/>
         </div>
       </div>

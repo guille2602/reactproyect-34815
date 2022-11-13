@@ -19,3 +19,8 @@ hr{
 .prodName{
     opacity: 0.8;;
 }
+
+p { 
+    white-space: pre;
+    font-size: 11pt;
+}
