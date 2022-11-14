@@ -25,7 +25,8 @@ function ItemDetailContainer (props) {
             categoria={product.categoria}
             precio={product.precio}
             stock={product.stock}
-            info={product.info}>
+            info={product.info}
+            imgurl={product.imgurl}>
         </ItemDetail>)
 };
 

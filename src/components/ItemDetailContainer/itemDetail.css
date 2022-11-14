@@ -11,6 +11,12 @@ h5{
     color: rgb(187, 187, 187);
 }
 
+h6{
+    color: grey;
+    margin-bottom: 0 !important;
+    padding-top: 0.2em;
+}
+
 hr{
     color: rgb(187, 187, 187);
 }
@@ -20,6 +26,35 @@ hr{
 }
 
 p { 
+    padding-top:1em;
     white-space: pre;
     font-size: 11pt;
+    width: 100%;
+}
+
+.custBtn {
+    background-color: white;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    zoom: 0.8;
+    border-style: solid;
+    border-radius: 1vh;
+    border-width: 2px;
+    border-color: rgb(187, 187, 187);
+    color: grey;
+}
+
+.custBtn:hover {
+    background-color: #ab9880;
+    color: white;
+    border-color:#ab9880;
+}
+
+.row-flex{
+    display:flex;
+    flex-direction: row;
+    margin-bottom: 1.5em
+}
+
+.categoryLink {
+    border-style: none;
 }
