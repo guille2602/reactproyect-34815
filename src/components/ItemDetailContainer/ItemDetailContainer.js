@@ -18,15 +18,7 @@ function ItemDetailContainer (props) {
     useEffect(()=>{loadItem()},[]);
 
     return (
-        <ItemDetail 
-            key ={product.id}
-            id = {product.id}
-            producto={product.producto}
-            categoria={product.categoria}
-            precio={product.precio}
-            stock={product.stock}
-            info={product.info}>
-        </ItemDetail>)
+        <ItemDetail product={product}/>)
 };
 
 export default ItemDetailContainer;

@@ -31,7 +31,6 @@ function ItemListContainer ({greetings}) {
             <div className='prodsBox'>
   
             {products.map(({id, producto, precio, imgurl}) => {
-                const url = '/pictures/' + id + 'A.webp';
                 return (
                 <Item 
                     className='ms-auto col-sm-12 col-md-4 col-lg-4 col-xl-4'
@@ -39,7 +38,7 @@ function ItemListContainer ({greetings}) {
                     id={id}
                     name={producto}
                     price={precio}
-                    imgurl={url}>
+                    imgurl={imgurl}>
                 </Item>)
             })   
             }

@@ -5,18 +5,21 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFound from './components/NotFound/NotFound.js';
+import { CartContextProvider } from './context/cartContext';
 
 function App() {
   return (
-    <BrowserRouter>
-    <NavBar/>
-    <Routes>
-      <Route path='/' element={<ItemListContainer greetings="¡Bienvenidos a MundoCerámica!"/>}/>
-      <Route path= '/category/:categoryid' element={<ItemListContainer/>}/>
-      <Route path= '/item/:id' element={<ItemDetailContainer/>}/>
-      <Route path= '*' element={<NotFound/>}/>
-    </Routes>
-  </BrowserRouter> 
+    <CartContextProvider>
+        <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer greetings="¡Bienvenidos a MundoCerámica!"/>}/>
+          <Route path= '/category/:categoryid' element={<ItemListContainer/>}/>
+          <Route path= '/item/:id' element={<ItemDetailContainer/>}/>
+          <Route path= '*' element={<NotFound/>}/>
+        </Routes>
+      </BrowserRouter> 
+    </CartContextProvider>
   );
 }
 
