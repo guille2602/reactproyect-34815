@@ -15,13 +15,15 @@ export function CartContextProvider ({children}) {
         if (isInCart(item.id)) {
             //Si existe buscar y modificar la cantidad
             const position = newCart.findIndex(search => search.id === item.id);
-            newCart[position].quantity += quantity;
+            newCart[position].quantity = quantity;
+            console.log("Ya se encuentra en el carrito")
         } else {
             //Si no existe pushear el product y la cantidad
             item.quantity = quantity;
             newCart.push(item);
         }
         setCart(newCart); 
+        console.log(cart);
     };
 
     //Remover un item del cart usando su id - *** FALTA TERMINAR ***
@@ -30,7 +32,7 @@ export function CartContextProvider ({children}) {
         cart.forEach((item) => {
             item.id !== parseInt(itemId) && newCart.push(item)
         })
-        return newCart;
+        setCart(newCart);
     };
 
     //Remover todos los items
@@ -57,10 +59,10 @@ export function CartContextProvider ({children}) {
         let itemToFind = cart.find((prod) => prod.id === parseInt(id));
         let quantity = itemToFind === undefined? 0: itemToFind.quantity; 
         return quantity;
-    } 
+    }
 
     return (
-        <cartContext.Provider value={{addItem, removeItem, clear, isInCart, cartCount, itemQuantity}}>
+        <cartContext.Provider value={{cart, addItem, removeItem, clear, isInCart, cartCount, itemQuantity}}>
             {children}
         </cartContext.Provider>
     )

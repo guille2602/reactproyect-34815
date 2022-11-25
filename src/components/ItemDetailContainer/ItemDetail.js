@@ -14,9 +14,6 @@ function ItemDetail({ product }) {
     context.addItem(product, count);
   }
 
-  //Ver si se agregaron items al carrito para restar del stock
-    let updatedStock = product.stock - context.itemQuantity(product.id);
-
   //2. Envío por props el evento
   return (
     <div className="container-md itemInfoContainer">
@@ -45,16 +42,24 @@ function ItemDetail({ product }) {
               </button>
             </Link>
           </div>
-          <h5 className="mt-2 text-right">{product.precio}</h5>
-          <p className="mt-2 text-right col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <h5 className="mt-2 text-right">${product.precio}</h5>
+          <p className="mt-2 mb-4 text-right col-sm-12 col-md-12 col-lg-12 col-xl-12">
             {product.info}
           </p> 
-          <ItemCount
+          {
+            context.itemQuantity(product.id) === 0
+            ? <ItemCount
             onAdd={onAdd}
-            stock={updatedStock}
+            stock={product.stock}
             init={1}
             title="Agregar al carrito"
-          />
+            disableTitleBtn={false}
+            />
+            : <Link to="/cart">
+                <button className={"btn"} style={{backgroundColor:"#c7ad8a", color: "white"}}>Ir al carrito</button>
+              </Link>
+          }
+          
         </div>
       </div>
     </div>
