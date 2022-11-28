@@ -12,8 +12,8 @@ function Item ({id, name, price, imgurl}) {
         <img src={imgurl} alt='Product photograph' className="card-img-top"/>
       </Link>
       <div className="card-body">
-        <h5 className="card-title">{name}</h5>
-        <h6 className="card-text">{price}</h6>
+        <h6 className="card-title mb-1">{name}</h6>
+        <h5 className="card-text">$ {price}</h5>
       </div>
     </div>
   );

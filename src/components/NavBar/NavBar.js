@@ -26,7 +26,7 @@ function NavBar () {
                     <Link className='nav-link' to='/category/cocina'>Cocina</Link>
                     <Link className='nav-link' to='/category/macetas'>Macetas</Link>
                     <Link className='nav-link' to='/category/velas'>Velas</Link>
-                    <Nav.Link><CartWidget counter="0"></CartWidget></Nav.Link>
+                    <Link className='nav-link' to='/cart'><CartWidget counter="0"></CartWidget></Link>
                     <NavDropdown className="brand" align="end" title="Login" id="basic-nav-dropdown">
                         <NavDropdown.Item className="colorOnClick" href="#">Iniciar sesión</NavDropdown.Item>
                         <NavDropdown.Item className="colorOnClick" href="#">

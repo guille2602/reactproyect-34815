@@ -6,13 +6,13 @@ import Item from "./Item.js";
 import getItems from "../../services/mockService.js";
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from 'react-router-dom';
-
+import { Waveform } from '@uiball/loaders';
 
 //Renderizar contenedor de cards de productos
 function ItemListContainer ({greetings}) {
 
     const [products, setProducts] = useState([]);
-    
+    const [loading, setLoading] = useState(true)
     const { categoryid } = useParams();
 
     async function loadProducts() {
@@ -20,10 +20,22 @@ function ItemListContainer ({greetings}) {
         if (categoryid !== undefined) {
             prods = prods.filter((prod)=> prod.categoria === categoryid);
         };
-        setProducts(prods)
-}
+        setProducts(prods);
+        setLoading(false);
+    }
 
     useEffect(()=>{loadProducts()},[categoryid]);
+
+    if (loading) return (
+        <div className="anim-position">
+            <Waveform 
+                size={40}
+                lineWeight={3.5}
+                speed={1} 
+                color="black" 
+            />
+        </div>
+    )
 
     return (
         <div className="ms-auto box">

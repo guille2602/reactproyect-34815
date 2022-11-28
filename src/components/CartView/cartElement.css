@@ -9,3 +9,10 @@
 h3 {
     text-align: right;
 }
+
+.deleteBtn{
+    background-color: #f04c59  !important;
+    color: white !important;
+    height: 2.4em !important;
+    align-self: center;
+}

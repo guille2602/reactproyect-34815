@@ -2,6 +2,14 @@ import {createContext, useState, React} from "react";
 
 export const cartContext = createContext();
 
+export function convertToARSMoneyFormat (num) {
+        num = num.toLocaleString('es-AR', {
+        style:'currency',
+        currency:'ARS',
+        maximumFractionDigits:0});
+        return num;
+}
+
 export function CartContextProvider ({children}) {
     
     //El carrito debe contener un array de objetos (productos y cantidad)
@@ -16,14 +24,12 @@ export function CartContextProvider ({children}) {
             //Si existe buscar y modificar la cantidad
             const position = newCart.findIndex(search => search.id === item.id);
             newCart[position].quantity = quantity;
-            console.log("Ya se encuentra en el carrito")
         } else {
             //Si no existe pushear el product y la cantidad
             item.quantity = quantity;
             newCart.push(item);
         }
-        setCart(newCart); 
-        console.log(cart);
+        setCart(newCart);
     };
 
     //Remover un item del cart usando su id - *** FALTA TERMINAR ***
@@ -54,6 +60,12 @@ export function CartContextProvider ({children}) {
         return counter;
     }
 
+    function cartTotalPrice () {
+        let counter = 0;
+        cart.map(item => counter = counter + parseInt(item.quantity) * parseInt(item.precio.replace('.','')))
+        return counter;
+    }
+
     //Devuelve la cantidad que hay de un producto, si no hay devuelve -1
     function itemQuantity (id) {
         let itemToFind = cart.find((prod) => prod.id === parseInt(id));
@@ -62,7 +74,7 @@ export function CartContextProvider ({children}) {
     }
 
     return (
-        <cartContext.Provider value={{cart, addItem, removeItem, clear, isInCart, cartCount, itemQuantity}}>
+        <cartContext.Provider value={{cart, addItem, removeItem, clear, isInCart, cartCount, itemQuantity, cartTotalPrice}}>
             {children}
         </cartContext.Provider>
     )

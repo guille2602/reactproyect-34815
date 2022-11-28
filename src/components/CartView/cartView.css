@@ -6,6 +6,26 @@
      min-width: 500px;
 }
 
-.custom-h2{
+.colorGrey {
     color: grey !important;
+}
+
+.emptyCartH1{
+    align-self: center;
+    justify-self: center;
+}
+
+.custom{
+    background-color: #c7ad8a;
+}
+
+.flex-y{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: auto;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
 }
