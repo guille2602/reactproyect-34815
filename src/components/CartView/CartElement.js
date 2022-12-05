@@ -11,7 +11,7 @@ function CartElement ({product}) {
 
     const context = useContext(cartContext);
 
-    let productsTotalPrice = parseInt(product.quantity) * parseInt(product.precio.replace('.',''));
+    let productsTotalPrice = parseInt(product.quantity) * parseInt(product.precio);
     productsTotalPrice = convertToARSMoneyFormat(productsTotalPrice);
 
     function onAdd(count) {

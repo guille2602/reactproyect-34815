@@ -62,7 +62,7 @@ export function CartContextProvider ({children}) {
 
     function cartTotalPrice () {
         let counter = 0;
-        cart.map(item => counter = counter + parseInt(item.quantity) * parseInt(item.precio.replace('.','')))
+        cart.map(item => counter = counter + parseInt(item.quantity) * parseInt(item.precio))
         return counter;
     }
 

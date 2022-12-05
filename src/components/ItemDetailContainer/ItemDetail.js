@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./itemDetail.css";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import {useContext, React} from "react";
-import { cartContext } from "../../context/cartContext";
+import { cartContext, convertToARSMoneyFormat } from "../../context/cartContext";
 import ItemCount from "../ItemCount/ItemCount.js";
 import { Link } from "react-router-dom";
 
@@ -42,7 +42,7 @@ function ItemDetail({ product }) {
               </button>
             </Link>
           </div>
-          <h5 className="mt-2 text-right">${product.precio}</h5>
+          <h5 className="mt-2 text-right">{convertToARSMoneyFormat(parseInt(product.precio))}</h5>
           <p className="mt-2 mb-4 text-right col-sm-12 col-md-12 col-lg-12 col-xl-12">
             {product.info}
           </p> 

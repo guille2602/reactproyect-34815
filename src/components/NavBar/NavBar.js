@@ -1,8 +1,6 @@
 import React from 'react';
 import "./navbar.css";
 import CartWidget from './CartWidget.js';
-
-//Importaciones de React-Boostrap para NavBar
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';

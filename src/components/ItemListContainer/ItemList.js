@@ -1,6 +1,7 @@
 import React from "react";
 import Item from "./Item.js";
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { convertToARSMoneyFormat } from "../../context/cartContext.jsx";
 
 function ItemList () {
     {products.map(({id, producto, precio, imgurl}) => {
