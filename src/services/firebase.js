@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore, collection, doc, getDoc, getDocs, query, where } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDuKzIiS8ioDkDDBaSl43vLgcjV5KEVihM",
@@ -10,8 +11,50 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-//1. Traer un elemento
-//2. Traer todos los elementos
-//3. Traer una categoría 
+//Traer un elemento
 
+export async function getItem(id) {
+  const itemRef = doc(db, "products", id);
+  const itemSnap = await getDoc(itemRef);
+  if (itemSnap.exists()) {
+    return {
+      ...itemSnap.data(),
+      id: itemSnap.id
+    };
+  } else {
+    console.log("Item no encontrado");
+  }
+}
+
+//Traer todos los elementos
+
+export async function getItems() {
+    const prodsCollection = collection(db, "products");
+    const prodsSnapshot = await getDocs(prodsCollection);
+    const prodsArray = prodsSnapshot.docs.map( (item) => {
+      return {
+        ...item.data(),
+        id: item.id
+      }
+    });
+    return prodsArray;
+}
+
+//Traer una categoría 
+
+export async function getItemsByCategory(category) {
+  const prodsCollection = collection(db, "products");
+  const q = query(prodsCollection, where("categoria", "==", category));
+  const prodsSnapshot = await getDocs(q);
+  const prodsArray = prodsSnapshot.docs.map( (item) => {
+    return {
+      ...item.data(),
+      id: item.id
+    }
+  });
+  return prodsArray;
+}
+
+export default getItems;

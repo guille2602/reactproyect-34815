@@ -36,7 +36,7 @@ export function CartContextProvider ({children}) {
     function removeItem(itemId) {
         let newCart = [];
         cart.forEach((item) => {
-            item.id !== parseInt(itemId) && newCart.push(item)
+            item.id !== itemId && newCart.push(item)
         })
         setCart(newCart);
     };
@@ -49,7 +49,7 @@ export function CartContextProvider ({children}) {
 
     //Devuelve true o false
     function isInCart(id) {
-        const searchResult = cart.some( item => item.id === parseInt(id));
+        const searchResult = cart.some( item => item.id === id);
         return searchResult;
     };
 
@@ -68,7 +68,7 @@ export function CartContextProvider ({children}) {
 
     //Devuelve la cantidad que hay de un producto, si no hay devuelve -1
     function itemQuantity (id) {
-        let itemToFind = cart.find((prod) => prod.id === parseInt(id));
+        let itemToFind = cart.find((prod) => prod.id === id);
         let quantity = itemToFind === undefined? 0: itemToFind.quantity; 
         return quantity;
     }

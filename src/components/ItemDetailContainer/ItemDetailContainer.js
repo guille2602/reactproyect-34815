@@ -1,6 +1,6 @@
 import React from "react";
 import {useEffect, useState} from "react";
-import {getItem} from "../../services/mockService.js";
+import {getItem} from "../../services/firebase.js";
 import ItemDetail from "./ItemDetail.js";
 import {useParams} from "react-router-dom";
 import { Waveform } from '@uiball/loaders';

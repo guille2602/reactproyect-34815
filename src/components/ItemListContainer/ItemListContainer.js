@@ -3,7 +3,7 @@ import React from "react";
 import {useEffect, useState} from "react";
 import './ItemListContainer.css'
 import Item from "./Item.js";
-import getItems from "../../services/mockService.js";
+import getItems, { getItemsByCategory } from "../../services/firebase.js";
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from 'react-router-dom';
 import { Waveform } from '@uiball/loaders';
@@ -16,14 +16,14 @@ function ItemListContainer ({greetings}) {
     const { categoryid } = useParams();
 
     async function loadProducts() {
-        let prods = await getItems();
-        if (categoryid !== undefined) {
-            prods = prods.filter((prod)=> prod.categoria === categoryid);
-        };
+        
+        let prods = categoryid === undefined
+        ? await getItems()
+        : await getItemsByCategory(categoryid);
         setProducts(prods);
         setLoading(false);
     }
-
+    // eslint-disable-next-line 
     useEffect(()=>{loadProducts()},[categoryid]);
 
     if (loading) return (
