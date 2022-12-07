@@ -1,9 +1,12 @@
 .custContainer {
     margin-top: 2em;
-     width: 70%;
-     box-shadow: 0 1px 3px rgba(0,0,0,0.35);
-     border-radius: 0.5em;
-     min-width: 500px;
+    width: 80%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.35);
+    border-radius: 0.5em;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .colorGrey {
@@ -28,4 +31,28 @@
     align-items: center;
     justify-content: center;
     gap: 1.5em;
+}
+
+.flex-x {
+    padding: 1em 0 1em 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyCartBtn {
+    background-color: white;
+    border-style: none;
+    color: grey;
+}
+
+.emptyCartDiv {
+    box-shadow: none;
+    margin-top: 0;
+}
+
+.opacity-90 {
+    opacity: 0.9;
 }

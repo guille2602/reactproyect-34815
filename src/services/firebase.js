@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, getDoc, getDocs, query, where } from "firebase/firestore";
+import { getFirestore, collection, doc, getDoc, getDocs, query, where, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDuKzIiS8ioDkDDBaSl43vLgcjV5KEVihM",
@@ -55,6 +55,14 @@ export async function getItemsByCategory(category) {
     }
   });
   return prodsArray;
+}
+
+//Crear orden de compra
+
+export async function createOrder(order){
+  const ordersCollection = collection(db, "orders");
+  const docRef = await addDoc(ordersCollection, order);
+  return docRef;
 }
 
 export default getItems;

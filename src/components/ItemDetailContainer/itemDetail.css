@@ -27,10 +27,10 @@ hr{
 
 p { 
     padding-top:1em;
-    white-space: pre;
+    white-space: pre-wrap;
     font-size: 11pt;
-    width: 100%;
 }
+
 
 .custBtn {
     background-color: white;

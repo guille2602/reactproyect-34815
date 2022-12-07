@@ -4,10 +4,25 @@ import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./cartView.css"
 import CartElement from "./CartElement";
 import { Link } from "react-router-dom";
-
+import { createOrder } from "../../services/firebase";
 
 function CartView() {
     const context = useContext(cartContext);
+
+    async function handleCheckOut() {
+        //Genero un objeto con los datos de la orden para enviar al servidor
+        const order = {
+            date: new Date(),
+            buyer: {name:"Guille", Telefono: 1133969444, mail: "guille.2602@gmail.com"},
+            items: context.cart,
+            total: context.cartTotalPrice()
+        };
+        const confirmedOrder = await createOrder(order);
+        console.log(confirmedOrder);
+
+        //Redirigir al usuario a una pantalla con el id de la compra con useNavigate y buscar de FireBase el estado del pedido
+    }
+
         if (context.cartCount() === 0) {
             return (
                 <div className="flex-y">
@@ -18,22 +33,38 @@ function CartView() {
         }
         else {
         return (
-            <div className="custContainer container mb-5">
-            <h4 className="text-center pt-4 pb-3 colorGrey">Carrito ({context.cartCount()})</h4>
-            <hr className="mt-0 mb-2 mx-3"/>
-                {
-                    context.cart.map((item)=>(
-                        <div key={item.id}>
-                        <CartElement 
-                        className='ms-auto col-sm-12 col-md-12 col-lg-12 col-xl-12'
-                        product={item}>
-                        </CartElement>
-                        <hr className="mt-2 mb-2 mx-3"/>
-                        </div>)
-                    )
-                }
-            <h4 className="text-center pt-3 pb-4">Total a pagar: {convertToARSMoneyFormat(context.cartTotalPrice())}</h4>
-            </div>)
+            <>
+                <div className="custContainer container mb-3">
+                <h4 className="text-center pt-4 pb-3 colorGrey">Carrito ({context.cartCount()})</h4>
+                <hr className="mt-0 mb-2 mx-3"/>
+                    {
+                        context.cart.map((item)=>(
+                            <div key={item.id}>
+                            <CartElement 
+                            className='ms-auto col-sm-12 col-md-12 col-lg-12 col-xl-12'
+                            product={item}>
+                            </CartElement>
+                            <hr className="mt-2 mb-2 mx-3"/>
+                            </div>)
+                        )
+                    }
+                <h4 className="text-center pt-3 pb-2">Total a pagar: {convertToARSMoneyFormat(context.cartTotalPrice())}</h4>
+                <hr className="mt-0 mb-3 mx-3"/>
+                <div className="flex-x">
+                    <button 
+                        className="btn btn-light col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-3" 
+                        onClick={context.clear}>
+                            Vaciar el carrito
+                    </button>
+                    <button 
+                        className="btn btn-secondary col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-3" 
+                        onClick={handleCheckOut}>
+                            Finalizar compra
+                    </button>
+                </div>
+                </div>
+            </>
+            )
         }  
 }
 

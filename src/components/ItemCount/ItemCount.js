@@ -22,7 +22,7 @@ function ItemCount ({init, stock, title, onAdd, disableTitleBtn}) {
 
     /*3. Agrego el eventListener al botón y le paso la función enviada del padre, le devuelvo el contador*/
     return (
-        <div className="col-sm-12 col-md-12 col-lg-9 col-xl-7 btn-group">
+        <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 btn-group">
             <button className="btn custom" onClick={handleSubtract}>-</button>
             <span className="btn custom">{count}</span>
             <button className="btn custom" onClick={handleAdd}>+</button>

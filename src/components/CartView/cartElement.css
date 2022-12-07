@@ -7,7 +7,7 @@
 }
 
 h3 {
-    text-align: right;
+    text-align: center;
 }
 
 .deleteBtn{
@@ -15,4 +15,9 @@ h3 {
     color: white !important;
     height: 2.4em !important;
     align-self: center;
+    width: 100%;
+}
+
+.deleteBtn:hover {
+    opacity: 1;
 }
