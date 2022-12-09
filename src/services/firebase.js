@@ -65,4 +65,19 @@ export async function createOrder(order){
   return docRef;
 }
 
+//Traer un elemento de la colección de órdenes
+
+export async function getOrder(orderId) {
+  const orderRef = doc(db, "orders", orderId);
+  const orderSnap = await getDoc(orderRef);
+  if (orderSnap.exists()) {
+    return {
+      ...orderSnap.data(),
+      id: orderSnap.id
+    };
+  } else {
+    return -1
+  }
+}
+
 export default getItems;

@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NotFound from './components/NotFound/NotFound.js';
 import { CartContextProvider } from './context/cartContext';
 import CartView from './components/CartView/CartView';
+import Thanks from './components/Thanxs/Thanks';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path= '/category/:categoryid' element={<ItemListContainer/>}/>
           <Route path= '/item/:id' element={<ItemDetailContainer/>}/>
           <Route path= '/cart' element={<CartView/>}/>
+          <Route path= '/thanks/:orderid' element={<Thanks/>}/>
           <Route path= '*' element={<NotFound/>}/>
         </Routes>
       </BrowserRouter> 

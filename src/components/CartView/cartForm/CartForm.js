@@ -43,12 +43,12 @@ function CartForm (props) {
                         <FormInput name="email" label="E-mail" type="email" value={info.email} onChange={handleInputChange}></FormInput>
                     </form>
                     <div className="btnsGroup modal-footer pb-0">
-                        <Button variant="secondary" className="btn borderNone" onClick={handleClose}>
+                        <Button variant="light" onClick={handleClose}>
                             Cancelar
                         </Button>
                         <Button 
-                            variant="primary" 
-                            className="customBtn"
+                            variant="secondary" 
+                            className=""
                             onClick={()=>{
                                 handleClose();
                                 props.onClick(info);
@@ -57,7 +57,6 @@ function CartForm (props) {
                                     phone: "",
                                     email: ""
                                 });
-                                context.clear()
                             }}
                             disabled={info.name === "" || info.phone === "" || info.email === ""}
                         >

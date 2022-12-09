@@ -1,17 +1,17 @@
-import {useContext, React} from "react";
+import { useContext, React } from "react";
 import { cartContext, convertToARSMoneyFormat } from "../../context/cartContext";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./cartView.css"
 import CartElement from "./CartElement";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createOrder } from "../../services/firebase";
 import CartForm from "./cartForm/CartForm";
 
 function CartView() {
     const context = useContext(cartContext);
+    const navigate = useNavigate();
 
     async function handleCheckOut(data) {
-        //Genero un objeto con los datos de la orden para enviar al servidor
         const order = {
             date: new Date(),
             buyer: data,
@@ -19,20 +19,19 @@ function CartView() {
             total: context.cartTotalPrice()
         };
         const confirmedOrder = await createOrder(order);
-        console.log(confirmedOrder.id);
-
-        //Redirigir al usuario a una pantalla con el id de la compra con useNavigate y buscar de FireBase el estado del pedido
+        navigate(`/thanks/${confirmedOrder.id}`);
+        context.clear()
     }
 
-        if (context.cartCount() === 0) {
-            return (
-                <div className="flex-y">
-                    <h2 className="colorGrey emptyCartH1 text-center">No hay elementos en el carrito</h2>
-                    <Link to="/"><button type="button" className="btn custom mt-0">Volver a la tienda</button></Link>
-                </div>
-            )
-        }
-        else {
+    if (context.cartCount() === 0) {
+        return (
+            <div className="flex-y">
+                <h2 className="colorGrey emptyCartH1 text-center">No hay elementos en el carrito</h2>
+                <Link to="/"><button type="button" className="btn custom mt-0">Volver a la tienda</button></Link>
+            </div>
+        )
+    }
+    else {
         return (
             <>
                 <div className="custContainer container mb-3">
@@ -61,8 +60,8 @@ function CartView() {
                 </div>
                 </div>
             </>
-            )
-        }  
+        )
+    }  
 }
 
 export default CartView;
