@@ -73,7 +73,8 @@ export async function getOrder(orderId) {
   if (orderSnap.exists()) {
     return {
       ...orderSnap.data(),
-      id: orderSnap.id
+      id: orderSnap.id,
+      status: "Pendiente"
     };
   } else {
     return -1
