@@ -5,20 +5,21 @@ import "./cartView.css"
 import CartElement from "./CartElement";
 import { Link } from "react-router-dom";
 import { createOrder } from "../../services/firebase";
+import CartForm from "./cartForm/CartForm";
 
 function CartView() {
     const context = useContext(cartContext);
 
-    async function handleCheckOut() {
+    async function handleCheckOut(data) {
         //Genero un objeto con los datos de la orden para enviar al servidor
         const order = {
             date: new Date(),
-            buyer: {name:"Guille", Telefono: 1133969444, mail: "guille.2602@gmail.com"},
+            buyer: data,
             items: context.cart,
             total: context.cartTotalPrice()
         };
         const confirmedOrder = await createOrder(order);
-        console.log(confirmedOrder);
+        console.log(confirmedOrder.id);
 
         //Redirigir al usuario a una pantalla con el id de la compra con useNavigate y buscar de FireBase el estado del pedido
     }
@@ -56,11 +57,7 @@ function CartView() {
                         onClick={context.clear}>
                             Vaciar el carrito
                     </button>
-                    <button 
-                        className="btn btn-secondary col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-3" 
-                        onClick={handleCheckOut}>
-                            Finalizar compra
-                    </button>
+                    <CartForm onClick={handleCheckOut}>Finalizar compra</CartForm>
                 </div>
                 </div>
             </>

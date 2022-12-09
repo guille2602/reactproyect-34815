@@ -1,0 +1,31 @@
+.btnsGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.formFlex{
+    display: flex;
+    flex-direction: column;
+}
+
+.customBtn{
+    background-color: #c7ad8a  !important;
+    color: white !important;
+    border-style: none !important;
+}
+
+.customBtn:hover {
+    background-color: #ab9880  !important;
+}
+
+.borderNone {
+    border-style: none !important;
+    height: 36px !important;
+}

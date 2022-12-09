@@ -23,7 +23,7 @@ function CartElement ({product}) {
     }
 
     return(
-        <div className="row container-md itemInfoContainer py-4 px-2 mx-0">
+      <div className="row container-md itemInfoContainer py-4 px-2 mx-0">
         <div className="row col-xl-12 mx-0">
           <div className="col-sm-4 col-md-4 col-lg-3 col-xl-3 py-2">
             <Link to={`/item/${product.id}`}>
