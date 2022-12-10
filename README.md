@@ -20,7 +20,7 @@ ___
 
 - Boostrap
 - ReactBoostrap
-<br>
+
 <br>
 
 ## ⚙️ Instalación y comandos soportados
