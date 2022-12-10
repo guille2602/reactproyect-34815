@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Link} from 'react-router-dom';
 
 function NavBar () {
@@ -25,16 +24,10 @@ function NavBar () {
                     <Link className='nav-link' to='/category/macetas'>Macetas</Link>
                     <Link className='nav-link' to='/category/velas'>Velas</Link>
                     <Link className='nav-link' to='/cart'><CartWidget counter="0"></CartWidget></Link>
-                    {/* <NavDropdown className="brand" align="end" title="Login" id="basic-nav-dropdown">
-                        <NavDropdown.Item className="colorOnClick" href="#">Iniciar sesión</NavDropdown.Item>
-                        <NavDropdown.Item className="colorOnClick" href="#">
-                            Registrarse
-                        </NavDropdown.Item>
-                    </NavDropdown> */}
                 </Nav>
                 </Navbar.Collapse>
             </Container>
-            </Navbar>
+        </Navbar>
     );
 }
 

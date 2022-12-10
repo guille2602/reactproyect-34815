@@ -13,7 +13,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-//Traer un elemento
+//Traer un elemento de la colección "productos".
 
 export async function getItem(id) {
   const itemRef = doc(db, "products", id);
@@ -28,7 +28,7 @@ export async function getItem(id) {
   }
 }
 
-//Traer todos los elementos
+//Traer todos los elementos de la colección "productos".
 
 export async function getItems() {
     const prodsCollection = collection(db, "products");
@@ -42,7 +42,7 @@ export async function getItems() {
     return prodsArray;
 }
 
-//Traer una categoría 
+//Traer una categoría de la colección "productos".
 
 export async function getItemsByCategory(category) {
   const prodsCollection = collection(db, "products");
@@ -57,7 +57,7 @@ export async function getItemsByCategory(category) {
   return prodsArray;
 }
 
-//Crear orden de compra
+//Crear una orden de compra en coleccion "orders"
 
 export async function createOrder(order){
   const ordersCollection = collection(db, "orders");
@@ -65,7 +65,7 @@ export async function createOrder(order){
   return docRef;
 }
 
-//Traer un elemento de la colección de órdenes
+//Traer un elemento de la colección "orders", devuelve -1 si no es encontrado.
 
 export async function getOrder(orderId) {
   const orderRef = doc(db, "orders", orderId);
