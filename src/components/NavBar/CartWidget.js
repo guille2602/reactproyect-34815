@@ -13,8 +13,7 @@ function CartWidget (prop) {
     return(
         <div className="cartItem">
             <FontAwesomeIcon icon={ faCartShopping } />
-            {
-                quantity !== 0 && <Badge pill className="itemsCounter" bg="light" text="dark">{quantity}</Badge>}
+            {quantity !== 0 && <Badge pill className="itemsCounter" bg="light" text="dark">{quantity}</Badge>}
         </div>
     )
 }

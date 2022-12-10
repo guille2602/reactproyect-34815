@@ -6,13 +6,17 @@ Es un proyecto creado en React con las funciones básicas de una tienda de bazar
 
 ## 🚀 Funcionamiento
 ___
+<br>
 
 Pantalla principal con items y categorías donde el usuario podrá visualizar los productos de la tienda, navegar al detalle, agregar a un carrito y recibir un comprobante de pedido con la información del mismo.
+
+[Ver proyecto en producción](https://reactproyect-34815.vercel.app/)
 <br>
 <br>
 
 ## 🛠️ Herramientas adicionales
 ___
+<br>
 
 - Boostrap
 - ReactBoostrap
@@ -41,14 +45,12 @@ Empaquetar para producción:
 `npm run build`
 
 <br>
-<br>
 
 ## 💬 Aclaraciones
 ___
 <br>
 -  Los componentes cuentan con sus respectivas hojas de estilo, en el caso de los componentes que no cuentan con ellas se trabajó con estilos de Boostrap.
 
-<br>
 <br>
 
 ## 🏁 Requerimiento y objetivos 

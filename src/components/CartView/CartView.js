@@ -35,29 +35,29 @@ function CartView() {
         return (
             <>
                 <div className="custContainer container mb-3">
-                <h4 className="text-center pt-4 pb-3 colorGrey">Carrito ({context.cartCount()})</h4>
-                <hr className="mt-0 mb-2 mx-3"/>
+                    <h4 className="text-center pt-4 pb-3 colorGrey">Carrito ({context.cartCount()})</h4>
+                    <hr className="mt-0 mb-2 mx-3"/>
                     {
                         context.cart.map((item)=>(
                             <div key={item.id}>
-                            <CartElement 
-                            className='ms-auto col-sm-12 col-md-12 col-lg-12 col-xl-12'
-                            product={item}>
-                            </CartElement>
-                            <hr className="mt-2 mb-2 mx-3"/>
+                                <CartElement 
+                                    className='ms-auto col-sm-12 col-md-12 col-lg-12 col-xl-12'
+                                    product={item}>
+                                </CartElement>
+                                <hr className="mt-2 mb-2 mx-3"/>
                             </div>)
                         )
                     }
-                <h4 className="text-center pt-3 pb-2">Total a pagar: {convertToARSMoneyFormat(context.cartTotalPrice())}</h4>
-                <hr className="mt-0 mb-3 mx-3"/>
-                <div className="flex-x">
-                    <button 
-                        className="btn btn-light col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-3" 
-                        onClick={context.clear}>
-                            Vaciar el carrito
-                    </button>
-                    <CartForm onClick={handleCheckOut}>Finalizar compra</CartForm>
-                </div>
+                    <h4 className="text-center pt-3 pb-2">Total a pagar: {convertToARSMoneyFormat(context.cartTotalPrice())}</h4>
+                    <hr className="mt-0 mb-3 mx-3"/>
+                    <div className="flex-x">
+                        <button 
+                            className="btn btn-light col-sm-5 col-md-5 col-lg-5 col-xl-5 mb-3" 
+                            onClick={context.clear}>
+                                Vaciar el carrito
+                        </button>
+                        <CartForm onClick={handleCheckOut}>Finalizar compra</CartForm>
+                    </div>
                 </div>
             </>
         )

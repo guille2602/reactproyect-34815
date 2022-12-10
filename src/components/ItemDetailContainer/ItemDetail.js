@@ -9,12 +9,11 @@ import { Link } from "react-router-dom";
 function ItemDetail({ product }) {
   
   const context = useContext(cartContext);
-  //1. Creo un handler del evento del counter.
+
   function onAdd(count) {
     context.addItem(product, count);
   }
 
-  //2. Envío por props el evento
   return (
     <div className="container-md itemInfoContainer">
       <div className="row ms-auto">

@@ -1,13 +1,11 @@
-import { React, useContext, useState} from "react";
+import { React, useState} from "react";
 import FormInput from "./FormInput";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './cartForm.css'
-import { cartContext } from "../../../context/cartContext";
 
 function CartForm (props) {
 
-    const context = useContext(cartContext);
     const [info, setInfo] = useState({
         name: "",
         phone: "",

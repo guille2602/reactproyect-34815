@@ -33,7 +33,8 @@ function ItemDetailContainer (props) {
     )
 
     return (
-        <ItemDetail product={product}/>)
+        <ItemDetail product={product}/>
+    )
 };
 
 export default ItemDetailContainer;
